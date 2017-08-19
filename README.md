@@ -1,5 +1,8 @@
 # Binlist
 
+[![Hex.pm](https://img.shields.io/hexpm/v/binlist.svg)](https://hex.pm/packages/binlist)
+[![Build Status](https://travis-ci.org/javierjulio/binlist.svg?branch=master)](https://travis-ci.org/javierjulio/binlist)
+
 Binlist is an Elixir client library for [the Binlist.net service](https://binlist.net).
 
 ## Installation
