@@ -37,7 +37,7 @@ defmodule Binlist.Mixfile do
   defp package do
     [
       description: "An Elixir client library for the Binlist.net service.",
-      files: ["lib", "mix.exs", "README", "LICENSE*"],
+      files: ["lib", "mix.exs", "README.md", "LICENSE*"],
       maintainers: ["Javier Julio"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/javierjulio/binlist-elixir"}
