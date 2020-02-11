@@ -30,8 +30,10 @@ defmodule Binlist.Mixfile do
 
   def docs do
     [
+      main: Binlist,
+      canonical: "http://hexdocs.pm/binlist",
+      source_url: "https://github.com/javierjulio/binlist-elixir",
       readme: "README.md",
-      main: Binlist
     ]
   end
 
