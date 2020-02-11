@@ -22,7 +22,7 @@ defmodule Binlist.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:httpoison, "~> 0.13"},
+      {:httpoison, "~> 1.0"},
       {:poison, "~> 3.1"},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]
