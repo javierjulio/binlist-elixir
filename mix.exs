@@ -23,7 +23,7 @@ defmodule Binlist.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 1.0"},
-      {:poison, "~> 3.1"},
+      {:poison, "~> 4.0"},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
