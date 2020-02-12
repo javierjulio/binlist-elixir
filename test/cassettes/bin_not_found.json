@@ -1,0 +1,26 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "Accept-Version": "3"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://lookup.binlist.net/123456"
+    },
+    "response": {
+      "binary": false,
+      "body": "",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Wed, 12 Feb 2020 02:25:07 GMT",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive"
+      },
+      "status_code": 404,
+      "type": "ok"
+    }
+  }
+]
