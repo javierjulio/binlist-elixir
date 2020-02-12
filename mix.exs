@@ -8,7 +8,13 @@ defmodule Binlist.Mixfile do
       elixir: "~> 1.6",
       start_permanent: Mix.env == :prod,
       deps: deps(),
-      package: package()
+      package: package(),
+      preferred_cli_env: [
+        vcr: :test,
+        "vcr.delete": :test,
+        "vcr.check": :test,
+        "vcr.show": :test
+      ],
     ]
   end
 
