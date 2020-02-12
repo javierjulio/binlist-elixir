@@ -1,4 +1,4 @@
-name: Binlist
+name: CI
 
 on: push
 
