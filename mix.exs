@@ -24,6 +24,7 @@ defmodule Binlist.Mixfile do
     [
       {:httpoison, "~> 1.0"},
       {:poison, "~> 4.0"},
+      {:exvcr, "~> 0.11", only: :test},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
