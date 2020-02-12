@@ -30,6 +30,7 @@ use Mix.Config
 #     import_config "#{Mix.env}.exs"
 if Mix.env == :test do
   config :exvcr, [
-    vcr_cassette_library_dir: "test/cassettes"
+    vcr_cassette_library_dir: "test/cassettes",
+    custom_cassette_library_dir: "test/custom_cassettes"
   ]
 end
