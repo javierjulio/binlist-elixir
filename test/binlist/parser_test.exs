@@ -1,6 +1,6 @@
 defmodule Binlist.ParserTest do
 
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   import Binlist.Parser
 
