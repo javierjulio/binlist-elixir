@@ -58,6 +58,30 @@ defmodule BinlistTest do
     refute bin.number.luhn
   end
 
+  test "finds a valid bin as a string" do
+    {:ok, bin} = use_cassette "get_bin_visa_debit" do
+      Binlist.find("45717360")
+    end
+
+    assert bin.scheme == "visa"
+    assert bin.type == "debit"
+    refute bin.prepaid
+    assert bin.brand == "Visa/Dankort"
+    assert bin.bank.city == "Hjørring"
+    assert bin.bank.name == "Jyske Bank"
+    assert bin.bank.phone == "+4589893300"
+    assert bin.bank.url == "www.jyskebank.dk"
+    assert bin.country.alpha2 == "DK"
+    assert bin.country.currency == "DKK"
+    assert bin.country.emoji == "🇩🇰"
+    assert bin.country.latitude == 56
+    assert bin.country.longitude == 10
+    assert bin.country.name == "Denmark"
+    assert bin.country.numeric == "208"
+    assert bin.number.length == 16
+    assert bin.number.luhn
+  end
+
   test "returns an error if bin not found" do
     use_cassette "get_bin_not_found_error" do
       assert {:error, "Bin not found"} == Binlist.find(123456)
