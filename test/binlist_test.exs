@@ -11,7 +11,7 @@ defmodule BinlistTest do
   end
 
   test "finds a valid bin" do
-    {:ok, bin} = use_cassette "bin_found" do
+    {:ok, bin} = use_cassette "get_bin_visa_debit" do
       Binlist.find(45717360)
     end
 
@@ -35,7 +35,7 @@ defmodule BinlistTest do
   end
 
   test "returns an error if bin not found" do
-    use_cassette "bin_not_found" do
+    use_cassette "get_bin_not_found_error" do
       assert {:error, "Bin not found"} == Binlist.find(123456)
     end
   end
