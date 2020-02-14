@@ -34,6 +34,30 @@ defmodule BinlistTest do
     assert bin.number.luhn
   end
 
+  test "finds a bin for a different scheme and type" do
+    {:ok, bin} = use_cassette "get_bin_mastercard_credit" do
+      Binlist.find(513101)
+    end
+
+    assert bin.scheme == "mastercard"
+    assert bin.type == "credit"
+    refute bin.prepaid
+    refute bin.brand
+    refute bin.bank.city
+    assert bin.bank.name == "CREDIT AGRICOLE"
+    assert bin.bank.phone == "0156581212"
+    refute bin.bank.url
+    assert bin.country.alpha2 == "FR"
+    assert bin.country.currency == "EUR"
+    assert bin.country.emoji == "🇫🇷"
+    assert bin.country.latitude == 46
+    assert bin.country.longitude == 2
+    assert bin.country.name == "France"
+    assert bin.country.numeric == "250"
+    refute bin.number.length
+    refute bin.number.luhn
+  end
+
   test "returns an error if bin not found" do
     use_cassette "get_bin_not_found_error" do
       assert {:error, "Bin not found"} == Binlist.find(123456)
