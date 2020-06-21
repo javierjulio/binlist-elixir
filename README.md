@@ -54,7 +54,10 @@ If an error occurs either of the following are returned:
 
 This is my first Elixir library so if you notice something wrong, please open an issue or better yet submit a pull request.
 
-Make a change and then run tests `mix test` to verify your changes. Note that the tests are integration based.
+* Create a branch
+* Make a code change
+* Run tests `mix test` to verify changes
+* Run `mix format` to format code
 
 Binlist.net sometimes doesn't return a field for one bin but it does for another. Since the library uses structs, if you notice any fields missing please submit an issue along with the bin introducing the field.
 
