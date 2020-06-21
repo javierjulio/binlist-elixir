@@ -1,5 +1,4 @@
 defmodule Binlist do
-
   @moduledoc """
   A client library for the Binlist.net service.
   """
@@ -28,8 +27,7 @@ defmodule Binlist do
   """
   def find(bin) do
     "https://lookup.binlist.net/#{bin}"
-    |> Binlist.get!(["Accept-Version": "3"])
+    |> Binlist.get!("Accept-Version": "3")
     |> Parser.parse(Bin)
   end
-
 end

@@ -1,13 +1,12 @@
 defmodule Binlist.Parser do
+  @type success :: {:ok, [map]}
+  @type error :: {:error, String.t()}
 
-  @type success          :: {:ok, [map]}
-  @type error            :: {:error, String.t}
-
-  @spec parse(HTTPoison.Response.t, module) :: success | error
+  @spec parse(HTTPoison.Response.t(), module) :: success | error
   def parse(response, module) do
-    handle_errors response, fn(body) ->
+    handle_errors(response, fn body ->
       Poison.decode!(body, as: target(module))
-    end
+    end)
   end
 
   defp target(module) when is_atom(module), do: module.__struct__
@@ -28,5 +27,4 @@ defmodule Binlist.Parser do
         {:error, "Unknown error", status}
     end
   end
-
 end

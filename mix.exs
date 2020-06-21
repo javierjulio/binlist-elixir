@@ -6,7 +6,7 @@ defmodule Binlist.Mixfile do
       app: :binlist,
       version: "0.1.0",
       elixir: "~> 1.6",
-      start_permanent: Mix.env == :prod,
+      start_permanent: Mix.env() == :prod,
       deps: deps(),
       package: package(),
       preferred_cli_env: [
@@ -14,7 +14,7 @@ defmodule Binlist.Mixfile do
         "vcr.delete": :test,
         "vcr.check": :test,
         "vcr.show": :test
-      ],
+      ]
     ]
   end
 
@@ -40,7 +40,7 @@ defmodule Binlist.Mixfile do
       main: Binlist,
       canonical: "http://hexdocs.pm/binlist",
       source_url: "https://github.com/javierjulio/binlist-elixir",
-      readme: "README.md",
+      readme: "README.md"
     ]
   end
 
@@ -53,5 +53,4 @@ defmodule Binlist.Mixfile do
       links: %{"GitHub" => "https://github.com/javierjulio/binlist-elixir"}
     ]
   end
-
 end

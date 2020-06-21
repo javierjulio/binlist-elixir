@@ -1,5 +1,4 @@
 defmodule Binlist.ParserTest do
-
   use ExUnit.Case, async: true
 
   import Binlist.Parser
@@ -33,5 +32,4 @@ defmodule Binlist.ParserTest do
 
     assert {:error, "Unknown error", 500} = parse(response, nil)
   end
-
 end

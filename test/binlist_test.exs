@@ -1,19 +1,19 @@
 defmodule BinlistTest do
-
   use ExUnit.Case, async: true
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
   doctest Binlist
 
   setup_all do
-    {:ok, _} = HTTPoison.start
+    {:ok, _} = HTTPoison.start()
     :ok
   end
 
   test "finds a valid bin" do
-    {:ok, bin} = use_cassette "get_bin_visa_debit" do
-      Binlist.find(45717360)
-    end
+    {:ok, bin} =
+      use_cassette "get_bin_visa_debit" do
+        Binlist.find(45_717_360)
+      end
 
     assert bin.scheme == "visa"
     assert bin.type == "debit"
@@ -35,9 +35,10 @@ defmodule BinlistTest do
   end
 
   test "finds a bin for a different scheme and type" do
-    {:ok, bin} = use_cassette "get_bin_mastercard_credit" do
-      Binlist.find(513101)
-    end
+    {:ok, bin} =
+      use_cassette "get_bin_mastercard_credit" do
+        Binlist.find(513_101)
+      end
 
     assert bin.scheme == "mastercard"
     assert bin.type == "credit"
@@ -59,9 +60,10 @@ defmodule BinlistTest do
   end
 
   test "finds a valid bin as a string" do
-    {:ok, bin} = use_cassette "get_bin_visa_debit" do
-      Binlist.find("45717360")
-    end
+    {:ok, bin} =
+      use_cassette "get_bin_visa_debit" do
+        Binlist.find("45717360")
+      end
 
     assert bin.scheme == "visa"
     assert bin.type == "debit"
@@ -84,7 +86,7 @@ defmodule BinlistTest do
 
   test "returns an error if bin not found" do
     use_cassette "get_bin_not_found_error" do
-      assert {:error, "Bin not found"} == Binlist.find(123456)
+      assert {:error, "Bin not found"} == Binlist.find(123_456)
     end
   end
 end
