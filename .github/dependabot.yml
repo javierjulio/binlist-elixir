@@ -1,0 +1,14 @@
+version: 2
+updates:
+- package-ecosystem: mix
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "12:00"
+    timezone: America/New_York
+  open-pull-requests-limit: 99
+  ignore:
+  - dependency-name: ex_doc
+    versions:
+    - 0.24.0
+    - 0.24.1
