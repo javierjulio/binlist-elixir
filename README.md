@@ -64,7 +64,7 @@ Binlist.net sometimes doesn't return a field for one bin but it does for another
 ## Misc/Todos
 
 - use `get` instead of `get!` due to error handling
-- update error handling to return error struct?
+- update error handling to return error struct? (https://github.com/sikanhe/stripe-elixir/blob/master/lib/stripe.ex)
 - review updates in [ex_twilio](https://github.com/danielberkompas/ex_twilio) library
 - implement [code linting directly](https://github.com/rrrene/credo), unless [GitHub Super Linter supports it](https://github.com/github/super-linter/issues/110) already
 
