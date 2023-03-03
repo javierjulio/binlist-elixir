@@ -8,27 +8,14 @@ jobs:
     name: OTP ${{ matrix.otp }} / Elixir ${{ matrix.elixir }}
     strategy:
       matrix:
-        otp: ['20.x', '21.x', '22.x', '23.x', '24.x']
-        elixir: ['1.8', '1.9', '1.10', '1.11', '1.12']
+        # https://hexdocs.pm/elixir/1.14/compatibility-and-deprecations.html#compatibility-between-elixir-and-erlang-otp
+        otp: ['22.x', '23.x', '24.x', '25.x']
+        elixir: ['1.12', '1.13', '1.14']
         exclude:
-          - otp: '20.x'
-            elixir: '1.10'
-          - otp: '20.x'
-            elixir: '1.11'
-          - otp: '20.x'
+          - otp: '25.x'
             elixir: '1.12'
-          - otp: '21.x'
-            elixir: '1.12'
-          - otp: '23.x'
-            elixir: '1.9'
-          - otp: '23.x'
-            elixir: '1.8'
-          - otp: '24.x'
-            elixir: '1.10'
-          - otp: '24.x'
-            elixir: '1.9'
-          - otp: '24.x'
-            elixir: '1.8'
+          - otp: '22.x'
+            elixir: '1.14'
     steps:
       - uses: actions/checkout@v2
       - uses: erlef/setup-beam@v1
