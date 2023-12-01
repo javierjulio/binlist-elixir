@@ -9,13 +9,8 @@ jobs:
     strategy:
       matrix:
         # https://hexdocs.pm/elixir/1.14/compatibility-and-deprecations.html#compatibility-between-elixir-and-erlang-otp
-        otp: ['22.x', '23.x', '24.x', '25.x']
-        elixir: ['1.12', '1.13', '1.14']
-        exclude:
-          - otp: '25.x'
-            elixir: '1.12'
-          - otp: '22.x'
-            elixir: '1.14'
+        otp: ['23.x', '24.x', '25.x']
+        elixir: ['1.13', '1.14']
     steps:
       - uses: actions/checkout@v2
       - uses: erlef/setup-beam@v1
