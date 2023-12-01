@@ -1,9 +1,12 @@
 version: 2
 updates:
-- package-ecosystem: mix
-  directory: "/"
-  schedule:
-    interval: monthly
-    time: "12:00"
-    timezone: America/New_York
-  open-pull-requests-limit: 99
+  - package-ecosystem: mix
+    directory: "/"
+    schedule:
+      interval: monthly
+      time: "12:00"
+      timezone: America/New_York
+    groups:
+      elixir-mix:
+        patterns:
+          - "*"
